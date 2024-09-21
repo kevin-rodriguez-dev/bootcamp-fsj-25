@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Paleta de colores */
+:root {
+    --degradado: linear-gradient(45deg, #ff6b6b, #f4d35e, #45aaf2);
+}
+
+/* CSS personalizado */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+}
+
+.slider img {
+    mask-image: linear-gradient(black 90%, transparent);
+    border: none;
+}
+
+h1 {
+    background: var(--degradado);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    font-weight: bold;
+}
