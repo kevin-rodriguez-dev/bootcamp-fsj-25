@@ -1,118 +1,118 @@
-// Wait for the DOM to be fully loaded
+// Esperar a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
-    // Exercise 5: Car Discount Calculator
+    // Ejercicio 5: Calculadora de Descuento de Coche
     document.getElementById("carForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        const carModel = document.getElementById("carModel").value;
-        let discount = 0;
-        let carName = "";
+        const modeloCoche = document.getElementById("carModel").value;
+        let descuento = 0;
+        let nombreCoche = "";
 
-        switch (carModel) {
+        switch (modeloCoche) {
             case "fiesta":
-                discount = 5;
-                carName = "Ford Fiesta";
+                descuento = 5;
+                nombreCoche = "Ford Fiesta";
                 break;
             case "focus":
-                discount = 10;
-                carName = "Ford Focus";
+                descuento = 10;
+                nombreCoche = "Ford Focus";
                 break;
             case "escape":
-                discount = 20;
-                carName = "Ford Escape";
+                descuento = 20;
+                nombreCoche = "Ford Escape";
                 break;
         }
 
         document.getElementById("carResult").innerHTML = `
-            <p>Selected car: ${carName}</p>
-            <p>Discount: ${discount}%</p>
+            <p>Coche seleccionado: ${nombreCoche}</p>
+            <p>Descuento: ${descuento}%</p>
         `;
     });
 
-    // Exercise 7: Number Analysis
+    // Ejercicio 7: Análisis de Números
     document.getElementById("numberForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        const numbers = document.getElementById("numbers").value.split(",").map(Number);
-        let negatives = 0,
-            positives = 0,
-            multiples15 = 0,
-            sumEvens = 0;
+        const numeros = document.getElementById("numbers").value.split(",").map(Number);
+        let negativos = 0,
+            positivos = 0,
+            multiplos15 = 0,
+            sumaPares = 0;
 
-        numbers.forEach((num) => {
-            if (num < 0) negatives++;
-            if (num > 0) positives++;
-            if (num % 15 === 0) multiples15++;
-            if (num % 2 === 0) sumEvens += num;
+        numeros.forEach((num) => {
+            if (num < 0) negativos++;
+            if (num > 0) positivos++;
+            if (num % 15 === 0) multiplos15++;
+            if (num % 2 === 0) sumaPares += num;
         });
 
         document.getElementById("numberResult").innerHTML = `
-            <p>Negative numbers: ${negatives}</p>
-            <p>Positive numbers: ${positives}</p>
-            <p>Multiples of 15: ${multiples15}</p>
-            <p>Sum of even numbers: ${sumEvens}</p>
+            <p>Números negativos: ${negativos}</p>
+            <p>Números positivos: ${positivos}</p>
+            <p>Múltiplos de 15: ${multiplos15}</p>
+            <p>Suma de números pares: ${sumaPares}</p>
         `;
     });
 
-    // Exercise 8: Multiplication Table
+    // Ejercicio 8: Tabla de Multiplicar
     document.getElementById("multiplicationForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        const multiplier = parseInt(document.getElementById("multiplier").value);
-        let table = '<table class="table table-striped"><thead><tr><th>Multiplier</th><th>Result</th></tr></thead><tbody>';
+        const multiplicador = parseInt(document.getElementById("multiplier").value);
+        let tabla = '<table class="table table-striped"><thead><tr><th>Multiplicador</th><th>Resultado</th></tr></thead><tbody>';
 
         for (let i = 1; i <= 10; i++) {
-            table += `<tr><td>${multiplier} x ${i}</td><td>${multiplier * i}</td></tr>`;
+            tabla += `<tr><td>${multiplicador} x ${i}</td><td>${multiplicador * i}</td></tr>`;
         }
 
-        table += "</tbody></table>";
-        document.getElementById("multiplicationResult").innerHTML = table;
+        tabla += "</tbody></table>";
+        document.getElementById("multiplicationResult").innerHTML = tabla;
     });
 
-    // Exercise 9: Temperature Converter
+    // Ejercicio 9: Conversor de Temperatura
     document.getElementById("temperatureForm").addEventListener("submit", function (e) {
         e.preventDefault();
         const celsius = parseFloat(document.getElementById("celsius").value);
         const fahrenheit = (celsius * 9) / 5 + 32;
-        let message = "";
+        let mensaje = "";
 
         if (fahrenheit >= 14 && fahrenheit < 32) {
-            message = "Temperatura baja";
+            mensaje = "Temperatura baja";
         } else if (fahrenheit >= 32 && fahrenheit < 68) {
-            message = "Temperatura adecuada";
+            mensaje = "Temperatura adecuada";
         } else if (fahrenheit >= 68 && fahrenheit < 96) {
-            message = "Temperatura alta";
+            mensaje = "Temperatura alta";
         } else {
-            message = "Temperatura desconocida";
+            mensaje = "Temperatura desconocida";
         }
 
         document.getElementById("temperatureResult").innerHTML = `
             <p>Celsius: ${celsius}°C</p>
             <p>Fahrenheit: ${fahrenheit.toFixed(2)}°F</p>
-            <p>Result: ${message}</p>
+            <p>Resultado: ${mensaje}</p>
         `;
     });
 
-    // Exercise 10: Student Age Analysis
+    // Ejercicio 10: Análisis de Edad de Estudiantes
     document.getElementById("ageForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        const morningAges = document.getElementById("morningAges").value.split(",").map(Number);
-        const afternoonAges = document.getElementById("afternoonAges").value.split(",").map(Number);
-        const eveningAges = document.getElementById("eveningAges").value.split(",").map(Number);
+        const edadesMañana = document.getElementById("morningAges").value.split(",").map(Number);
+        const edadesTarde = document.getElementById("afternoonAges").value.split(",").map(Number);
+        const edadesNoche = document.getElementById("eveningAges").value.split(",").map(Number);
 
-        const avgMorning = morningAges.reduce((a, b) => a + b, 0) / morningAges.length;
-        const avgAfternoon = afternoonAges.reduce((a, b) => a + b, 0) / afternoonAges.length;
-        const avgEvening = eveningAges.reduce((a, b) => a + b, 0) / eveningAges.length;
+        const promedioMañana = edadesMañana.reduce((a, b) => a + b, 0) / edadesMañana.length;
+        const promedioTarde = edadesTarde.reduce((a, b) => a + b, 0) / edadesTarde.length;
+        const promedioNoche = edadesNoche.reduce((a, b) => a + b, 0) / edadesNoche.length;
 
-        const highestAvg = Math.max(avgMorning, avgAfternoon, avgEvening);
-        let highestShift = "";
+        const promedioMasAlto = Math.max(promedioMañana, promedioTarde, promedioNoche);
+        let turnoMasAlto = "";
 
-        if (highestAvg === avgMorning) highestShift = "Morning";
-        else if (highestAvg === avgAfternoon) highestShift = "Afternoon";
-        else highestShift = "Evening";
+        if (promedioMasAlto === promedioMañana) turnoMasAlto = "Mañana";
+        else if (promedioMasAlto === promedioTarde) turnoMasAlto = "Tarde";
+        else turnoMasAlto = "Noche";
 
         document.getElementById("ageResult").innerHTML = `
-            <p>Morning shift average age: ${avgMorning.toFixed(2)}</p>
-            <p>Afternoon shift average age: ${avgAfternoon.toFixed(2)}</p>
-            <p>Evening shift average age: ${avgEvening.toFixed(2)}</p>
-            <p>Shift with highest average age: ${highestShift}</p>
+            <p>Promedio de edad del turno de mañana: ${promedioMañana.toFixed(2)}</p>
+            <p>Promedio de edad del turno de tarde: ${promedioTarde.toFixed(2)}</p>
+            <p>Promedio de edad del turno de noche: ${promedioNoche.toFixed(2)}</p>
+            <p>Turno con el promedio de edad más alto: ${turnoMasAlto}</p>
         `;
     });
 });
