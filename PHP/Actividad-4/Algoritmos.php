@@ -18,7 +18,8 @@ function bubbleSort($arr)
 }
 
 $argc = [5, -3, 8, -3, 7, 0, 8, -1, 4, -5, 2];
-print_r(bubbleSort($argc));
+echo "Original: " . implode(", ", $argc) . "\n";
+echo "Lista ordenada: " . implode(", ", bubbleSort($argc)) . "\n";
 
 function mergeSort($arr)
 {
@@ -62,7 +63,8 @@ function merge($left, $right)
 
 $argc = ["zorro", "elefante", "gato", "perro", "abeja", "jirafa", "delfín", "ballena", "canario"];
 
-print_r(mergeSort($argc));
+echo "Original: " . implode(", ", $argc) . "\n";
+echo "Lista ordenada: " . implode(", ", mergeSort($argc)) . "\n";
 
 function insertionSort($arr)
 {
@@ -85,4 +87,5 @@ function insertionSort($arr)
 
 $argc = ["Diego", "Erick", "Luis", "Kevin", "Karla", "Julio", "Gustavo", "Daniel"];
 
-print_r(insertionSort($argc));
+echo "Original: " . implode(", ", $argc) . "\n";
+echo "Lista ordenada: " . implode(", ", insertionSort($argc)) . "\n";
